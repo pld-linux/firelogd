@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# firelogd	Firewall log analyzer
+#
+# chkconfig:	345 85 15
+# description:	Firewall log analyzer and raport generator tool
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get service config
+[ -f /etc/sysconfig/firelogd ] && . /etc/sysconfig/firelogd
+
+# See how we were called.
+case "$1" in
+  start)
+	# Check if the service is already running?
+	if [ ! -f /var/lock/subsys/firelogd ]; then
+		msg_starting firelogd
+		daemon firelogd -d $FIRELOGD_OPTS
+		RETVAL=$?
+    		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/firelogd
+	else
+        	msg_already_running firelogd
+	        exit 1
+	fi
+	;;
+  stop)
+        # Stop daemons.
+	if [ -f /var/lock/subsys/firelogd ]; then
+                msg_stopping firelogd
+		killproc firelogd
+		rm -f /var/lock/subsys/firelogd > /dev/null 2>&1
+        else
+		msg_not_running firelogd
+	        exit 1
+	fi
+	;;
+  status)
+	status firelogd
+	RETVAL=$?
+	exit $RETVAL
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  reload)
+	msg_reloading firelogd
+	killproc firelogd -HUP
+	RETVAL=$?
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|status}"
+	exit 1
+	;;
+esac
+
+exit $RETVAL

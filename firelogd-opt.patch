@@ -1,0 +1,11 @@
+--- firelogd-1.3/Makefile.orig	Sat Apr 21 00:51:57 2001
++++ firelogd-1.3/Makefile	Mon Jan 13 11:43:47 2003
+@@ -3,7 +3,7 @@
+ RELEASE:=5
+ 
+ CC=gcc
+-CFLAGS= -O2 -Wall -DVERSION=\"$(VERSION)\" -DRELEASE=\"$(RELEASE)\"
++CFLAGS= $(OPT) -Wall -DVERSION=\"$(VERSION)\" -DRELEASE=\"$(RELEASE)\"
+ 
+ default: firelogd
+ 
