@@ -9,12 +9,12 @@ Version:	%{_ver}_%{_rev}
 Release:	2
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.speakeasy.org/~roux/dmn/current/%{name}-%{_ver}-%{_rev}.tgz
+Source0:	http://rouxdoo.freeshell.org/dmn/current/%{name}-%{_ver}-%{_rev}.tgz
 Source1:	%{name}.conf
 Source2:	%{name}.init
 Source3:	%{name}.sysconfig
 Patch0:		%{name}-opt.patch
-URL:		http://www.speakeasy.org/~roux/dmn/
+URL:		http://rouxdoo.freeshell.org/dmn/
 BuildRequires:	ctags
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
