@@ -26,7 +26,7 @@ them to you. It can also be used to parse an existing log file and it
 will take log data on standard input for formatting.
 
 %description -l pl
-To jest program, który przetworza logi ipchains lub iptables w czasie
+To jest program, który przetwarza logi ipchains lub iptables w czasie
 rzeczywistym. Kolejkuje kilka ostrze¿eñ i wysy³a je poczt±. Mo¿e byæ
 tak¿e u¿yty do przetworzenia istniej±cego pliku logów i wy¶wietlenia
 go w zadanym formacie.
