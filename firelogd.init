@@ -46,11 +46,14 @@ case "$1" in
 	$0 start
 	;;
   reload)
-	msg_reloading firelogd
-	busy
-	killproc firelogd -HUP
-	RETVAL=$?
-	[ $RETVAL -eq 0 ] && ok || died
+	if [ -f /var/lock/subsys/firelogd ]; then
+		msg_reloading firelogd
+		killproc firelogd -HUP
+		RETVAL=$?
+	else
+		msg_not_running fwlogwatch
+		exit 1
+	fi
 	;;
   *)
 	msg_usage "$0 {start|stop|restart|reload|status}"
