@@ -10,6 +10,7 @@ Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://rouxdoo.freeshell.org/dmn/current/%{name}-%{_ver}-%{_rev}.tgz
+# Source0-md5:	41c19fb70e25cf9da3a480b2da46e0ff
 Source1:	%{name}.conf
 Source2:	%{name}.init
 Source3:	%{name}.sysconfig
