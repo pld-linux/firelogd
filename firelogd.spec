@@ -35,9 +35,9 @@ go w zadanym formacie.
 Summary:	Scripts to run firelogd as daemon
 Summary(pl):	Skrypty do uruchamiania firelogd jako demona
 Group:		Daemons
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}
+Requires:	rc-scripts
 
 %description scripts
 Scripts to run firelogd as daemon.
@@ -90,12 +90,12 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc README TEMPLATES BUGS
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/firelogd.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/firelogd.conf
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
 
 %files scripts
 %defattr(644,root,root,755)
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
 %attr(640,root,root) /var/log/kernelpipe
