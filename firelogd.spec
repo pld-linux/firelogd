@@ -36,7 +36,7 @@ Summary:	Scripts to run firelogd as daemon
 Summary(pl):	Skrypty do uruchamiania firelogd jako demona
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	rc-scripts
 
 %description scripts
