@@ -3,7 +3,7 @@
 %define		_rev	5
 
 Summary:	Firewall log analyzer and report generator
-Summary(pl.UTF-8):   Analizator logów firewalla i generator raportów
+Summary(pl.UTF-8):	Analizator logów firewalla i generator raportów
 Name:		firelogd
 Version:	%{_ver}_%{_rev}
 Release:	2
@@ -33,7 +33,7 @@ go w zadanym formacie.
 
 %package scripts
 Summary:	Scripts to run firelogd as daemon
-Summary(pl.UTF-8):   Skrypty do uruchamiania firelogd jako demona
+Summary(pl.UTF-8):	Skrypty do uruchamiania firelogd jako demona
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
