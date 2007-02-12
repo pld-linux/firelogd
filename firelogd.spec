@@ -3,7 +3,7 @@
 %define		_rev	5
 
 Summary:	Firewall log analyzer and report generator
-Summary(pl):	Analizator logÛw firewalla i generator raportÛw
+Summary(pl.UTF-8):   Analizator log√≥w firewalla i generator raport√≥w
 Name:		firelogd
 Version:	%{_ver}_%{_rev}
 Release:	2
@@ -25,15 +25,15 @@ data in real time. It will queue up a small batch of alerts and mail
 them to you. It can also be used to parse an existing log file and it
 will take log data on standard input for formatting.
 
-%description -l pl
-To jest program, ktÛry przetwarza logi ipchains lub iptables w czasie
-rzeczywistym. Kolejkuje kilka ostrzeøeÒ i wysy≥a je poczt±. Moøe byÊ
-takøe uøyty do przetworzenia istniej±cego pliku logÛw i wy∂wietlenia
+%description -l pl.UTF-8
+To jest program, kt√≥ry przetwarza logi ipchains lub iptables w czasie
+rzeczywistym. Kolejkuje kilka ostrze≈ºe≈Ñ i wysy≈Ça je pocztƒÖ. Mo≈ºe byƒá
+tak≈ºe u≈ºyty do przetworzenia istniejƒÖcego pliku log√≥w i wy≈õwietlenia
 go w zadanym formacie.
 
 %package scripts
 Summary:	Scripts to run firelogd as daemon
-Summary(pl):	Skrypty do uruchamiania firelogd jako demona
+Summary(pl.UTF-8):   Skrypty do uruchamiania firelogd jako demona
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
@@ -42,7 +42,7 @@ Requires:	rc-scripts
 %description scripts
 Scripts to run firelogd as daemon.
 
-%description scripts -l pl
+%description scripts -l pl.UTF-8
 Skrypty do uruchamiania firelogd jako demona.
 
 %prep
